@@ -8,8 +8,14 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    height: 100vh; /* Force body to always be the full viewport height */
     background-color: #696969; /* Navy blue background */
+}
+
+/* Spacer to push footer to the bottom */
+.spacer {
+    flex-grow: 1; /* Takes up remaining space, pushing footer to the bottom */
 }
 
 /* Header */
@@ -83,7 +89,6 @@ footer {
     color: white;
     width: calc(100% - 40px); /* Adjusted width to account for margins */
     margin: 10px 20px; /* Adjusted margin for better spacing */
-    margin-top: auto;
     border-radius: 50px; /* Rounded corners */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Depth shadow only */
 }
