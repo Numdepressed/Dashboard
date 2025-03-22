@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Settings</h1>
+        <div class="settings">
+            <a href="index.html" class="settings-icon">
+                <i class="material-icons">dashboard</i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content: Theme Menu -->
+    <main>
+        <section class="theme-menu">
+            <h2>Theme Settings</h2>
+            <div class="form-group">
+                <label for="theme-select">Select Theme:</label>
+                <select id="theme-select">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+        </section>
+    </main>
+
+    <!-- Spacer to push footer to the bottom -->
+    <div class="spacer"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2023 My Website</p>
+        </div>
+    </footer>
+    <script>
+        // Toggle the dashboard icon visibility on tap for mobile
+        const header = document.querySelector('header');
+        header.addEventListener('click', () => {
+            header.classList.toggle('toggled');
+        });
+
+        // Load the saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
+            document.body.classList.add(`${savedTheme}-theme`);
+            document.getElementById('theme-select').value = savedTheme;
+        });
+
+        // Change theme when the user selects a new option
+        document.getElementById('theme-select').addEventListener('change', (e) => {
+            const selectedTheme = e.target.value;
+            document.body.classList.remove('light-theme', 'dark-theme');
+            document.body.classList.add(`${selectedTheme}-theme`);
+            localStorage.setItem('theme', selectedTheme); // Save the theme preference
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9243ab3ed9de53c8',t:'MTc0MjYyNTMyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
