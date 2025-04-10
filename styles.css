@@ -8,108 +8,94 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes at least the full viewport height */
-    height: 100vh; /* Force body to always be the full viewport height */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+    min-height: 100vh;
+    height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Default to dark theme */
 body.dark-theme {
-    background-color: #696969; /* Navy blue background */
+    background-color: #696969;
     color: white;
 }
 
-/* Light theme */
 body.light-theme {
-    background-color: #fff; /* Pure white background */
+    background-color: #fff;
     color: #333;
 }
 
-/* Spacer to push footer to the bottom */
 .spacer {
-    flex-grow: 1; /* Takes up remaining space, pushing footer to the bottom */
+    flex-grow: 1;
 }
 
-/* Header */
 header {
-    background-color: #333; /* Default for dark theme */
+    background-color: #333;
     color: white;
-    padding: 15px 20px 15px 20px; /* Initial padding: tighter on the right */
+    padding: 15px 20px 15px 20px;
     display: flex;
-    justify-content: flex-start; /* Align items to the start to avoid extra space */
+    justify-content: flex-start;
     align-items: center;
-    border-radius: 50px; /* Rounded corners */
-    margin: 10px 20px; /* Adjusted margin for better spacing */
-    width: fit-content; /* Wraps tightly around content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Depth shadow only */
+    border-radius: 50px;
+    margin: 10px 20px;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: 
-        padding 0.5s ease, /* Slower padding change */
-        background-color 0.5s ease, /* Slower background change */
-        box-shadow 0.5s ease, /* Slower shadow change */
-        color 0.3s ease; /* Smooth theme transition */
+        padding 0.5s ease,
+        background-color 0.5s ease,
+        box-shadow 0.5s ease,
+        color 0.3s ease;
 }
 
-/* Adjust header for light theme */
 body.light-theme header {
-    background-color: #e0e0e0; /* Light gray background for header */
+    background-color: #e0e0e0;
     color: #333;
 }
 
-/* Hover or tap effect for header (no width change) */
 header:hover,
 header.toggled {
-    background-color: #444; /* Slightly lighter background for highlight (dark theme) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Depth shadow only */
-    padding: 20px 30px; /* Increase padding on hover/tap */
+    background-color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
 }
 
-/* Adjust hover/tap effect for light theme */
 body.light-theme header:hover,
 body.light-theme header.toggled {
-    background-color: #d0d0d0; /* Slightly darker gray for highlight (light theme) */
+    background-color: #d0d0d0;
 }
 
-/* Initially wrap tightly around the h1 (Dashboard or Settings) */
 header h1 {
     font-size: 24px;
 }
 
-/* Hide the settings/dashboard icon initially, and don't reserve space */
 .settings {
-    display: none; /* Hidden initially, doesn't affect layout */
+    display: none;
     align-items: center;
-    transition: opacity 0.4s ease 0.3s; /* Smooth fade-in with a delay */
-    opacity: 0; /* Ensure opacity transition works */
+    transition: opacity 0.4s ease 0.3s;
+    opacity: 0;
 }
 
-/* Show the settings/dashboard icon when the header is hovered or tapped */
 header:hover .settings,
 header.toggled .settings {
-    display: flex; /* Make visible */
-    opacity: 1; /* Fade in the icon */
-    margin-left: 15px; /* Add spacing only when visible */
+    display: flex;
+    opacity: 1;
+    margin-left: 15px;
 }
 
-/* Settings/Dashboard icon */
 .settings-icon {
-    color: #ddd; /* Default for dark theme */
+    color: #ddd;
     text-decoration: none;
-    font-size: 24px; /* Larger size for the icon */
-    line-height: 1; /* Prevent extra spacing */
-    transition: color 0.3s ease; /* Smooth theme transition */
+    font-size: 24px;
+    line-height: 1;
+    transition: color 0.3s ease;
 }
 
-/* Style the Material Icons */
 .settings-icon .material-icons {
-    vertical-align: middle; /* Align with the header text */
+    vertical-align: middle;
 }
 
-/* Hover effect for the icon */
 .settings-icon:hover {
-    color: #fff; /* Hover for dark theme */
+    color: #fff;
 }
 
-/* Adjust settings icon for light theme */
 body.light-theme .settings-icon {
     color: #555;
 }
@@ -118,27 +104,24 @@ body.light-theme .settings-icon:hover {
     color: #333;
 }
 
-/* Main content area (for theme menu) */
 main {
     margin: 20px;
-    flex-grow: 1; /* Ensure main content takes up available space */
+    flex-grow: 1;
 }
 
-/* Theme menu styling */
 .theme-menu {
-    background-color: #333; /* Default for dark theme */
+    background-color: #333;
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 500px; /* Limit width for better readability */
-    margin: 0 auto; /* Center the menu */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+    max-width: 500px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Adjust theme menu for light theme */
 body.light-theme .theme-menu {
-    background-color: #e0e0e0; /* Light gray for light theme */
+    background-color: #e0e0e0;
     color: #333;
 }
 
@@ -158,117 +141,105 @@ body.light-theme .theme-menu {
     font-size: 16px;
 }
 
-/* Ensure select element text color matches the theme */
 .form-group select {
     width: 100%;
-    padding: 8px 30px 8px 8px; /* Add padding on the right for the arrow */
+    padding: 8px 30px 8px 8px;
     border: none;
     border-radius: 5px;
-    background-color: #444; /* Default for dark theme */
-    color: white; /* Default for dark theme */
+    background-color: #444;
+    color: white;
     font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
-    -webkit-appearance: none; /* Remove default dropdown arrow */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
 }
 
-/* Adjust select for light theme */
 body.light-theme .form-group select {
-    background-color: #d0d0d0; /* Slightly darker gray for light theme */
-    color: #333; /* Dark text for readability in light theme */
+    background-color: #d0d0d0;
+    color: #333;
 }
 
-/* Add custom dropdown arrow */
 .form-group {
     position: relative;
 }
 
 .form-group::after {
-    content: '▼'; /* Custom arrow */
+    content: '▼';
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: white; /* Default for dark theme */
-    font-size: 12px; /* Smaller arrow size */
-    pointer-events: none; /* Prevent interaction with the arrow */
+    color: white;
+    font-size: 12px;
+    pointer-events: none;
     transition: color 0.3s ease;
 }
 
 body.light-theme .form-group::after {
-    color: #333; /* Dark arrow for light theme */
+    color: #333;
 }
 
-/* Footer */
 footer {
-    background-color: #333; /* Default for dark theme */
+    background-color: #333;
     color: white;
-    width: calc(100% - 40px); /* Adjusted width to account for margins */
-    margin: 10px 20px; /* Adjusted margin for better spacing */
-    border-radius: 50px; /* Rounded corners */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Depth shadow only */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Adjust footer for light theme */
 body.light-theme footer {
-    background-color: #e0e0e0; /* Light gray for light theme */
+    background-color: #e0e0e0;
     color: #333;
 }
 
 .footer-bottom {
     text-align: center;
     padding: 5px;
-    background-color: #222; /* Default for dark theme */
+    background-color: #222;
     font-size: 10px;
     border-radius: 50px;
-    transition: background-color 0.3s ease; /* Smooth theme transition */
+    transition: background-color 0.3s ease;
 }
 
-/* Adjust footer-bottom for light theme */
 body.light-theme .footer-bottom {
-    background-color: #d0d0d0; /* Slightly darker gray for light theme */
+    background-color: #d0d0d0;
 }
 
-/* Media query for mobile devices (screens smaller than 768px) */
 @media (max-width: 768px) {
-    /* Header adjustments for mobile */
     header {
-        padding: 10px 15px; /* Smaller padding for mobile */
-        margin: 5px 10px; /* Smaller margins for mobile */
+        padding: 10px 15px;
+        margin: 5px 10px;
     }
 
-    /* Hover/tap effect for mobile */
     header:hover,
     header.toggled {
-        padding: 12px 20px; /* Slightly smaller padding increase on mobile */
+        padding: 12px 20px;
     }
 
-    /* Adjust the Dashboard/Settings text size */
     header h1 {
-        font-size: 18px; /* Smaller font size for mobile */
+        font-size: 18px;
     }
 
-    /* Adjust the settings/dashboard icon size and spacing */
     .settings-icon {
-        font-size: 20px; /* Slightly smaller icon */
+        font-size: 20px;
     }
 
     header:hover .settings,
     header.toggled .settings {
-        margin-left: 10px; /* Smaller spacing between Dashboard/Settings and icon on mobile */
+        margin-left: 10px;
     }
 
-    /* Main content adjustments for mobile */
     main {
         margin: 10px;
     }
 
     .theme-menu {
         padding: 15px;
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%;
     }
 
     .theme-menu h2 {
@@ -281,23 +252,22 @@ body.light-theme .footer-bottom {
     }
 
     .form-group select {
-        padding: 6px 25px 6px 6px; /* Adjust padding for smaller arrow on mobile */
+        padding: 6px 25px 6px 6px;
         font-size: 12px;
     }
 
     .form-group::after {
-        right: 8px; /* Adjust arrow position for mobile */
-        font-size: 10px; /* Smaller arrow on mobile */
+        right: 8px;
+        font-size: 10px;
     }
 
-    /* Footer adjustments for mobile */
     footer {
-        width: calc(100% - 20px); /* Adjust width for smaller margins */
-        margin: 5px 10px; /* Smaller margins for mobile */
+        width: calc(100% - 20px);
+        margin: 5px 10px;
     }
 
     .footer-bottom {
-        font-size: 8px; /* Smaller font size for footer text */
-        padding: 3px; /* Smaller padding */
+        font-size: 8px;
+        padding: 3px;
     }
 }
