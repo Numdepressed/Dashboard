@@ -105,50 +105,67 @@ body.light-theme .settings-icon:hover {
 }
 
 main {
-    margin: 20px;
+    margin: 0;
     flex-grow: 1;
 }
 
 .theme-menu {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 300px;
+    margin: 10px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.light-theme .theme-menu {
+.overview {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme .theme-menu,
+body.light-theme .overview {
     background-color: #e0e0e0;
     color: #333;
 }
 
-.theme-menu h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+.theme-menu h2,
+.overview h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.overview p {
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .form-group select {
     width: 100%;
-    padding: 8px 30px 8px 8px;
+    padding: 6px 25px 6px 6px;
     border: none;
     border-radius: 5px;
     background-color: #444;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -172,7 +189,7 @@ body.light-theme .form-group select {
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     pointer-events: none;
     transition: color 0.3s ease;
 }
@@ -234,31 +251,42 @@ body.light-theme .footer-bottom {
     }
 
     main {
-        margin: 10px;
+        margin: 0;
     }
 
     .theme-menu {
-        padding: 15px;
-        max-width: 100%;
+        padding: 10px;
+        max-width: 250px;
+        margin: 5px auto;
     }
 
-    .theme-menu h2 {
+    .overview {
+        padding: 10px;
+        margin: 5px 10px;
+    }
+
+    .theme-menu h2,
+    .overview h2 {
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .overview p {
+        font-size: 12px;
     }
 
     .form-group label {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .form-group select {
-        padding: 6px 25px 6px 6px;
-        font-size: 12px;
+        padding: 5px 20px 5px 5px;
+        font-size: 11px;
     }
 
     .form-group::after {
         right: 8px;
-        font-size: 10px;
+        font-size: 9px;
     }
 
     footer {
