@@ -28,6 +28,16 @@
                 </select>
             </div>
         </section>
+        <section class="display-settings">
+            <h2>Show To-do and Info</h2>
+            <div class="form-group">
+                <label for="display-select">Display Mode:</label>
+                <select id="display-select">
+                    <option value="separated">Separated</option>
+                    <option value="show-all">Show All</option>
+                </select>
+            </div>
+        </section>
     </main>
     <div class="spacer"></div>
     <footer>
@@ -54,6 +64,8 @@
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.body.classList.add(`${savedTheme}-theme`);
             document.getElementById('theme-select').value = savedTheme;
+            const savedDisplayMode = localStorage.getItem('displayMode') || 'separated';
+            document.getElementById('display-select').value = savedDisplayMode;
         });
 
         document.getElementById('theme-select').addEventListener('change', (e) => {
@@ -61,6 +73,11 @@
             document.body.classList.remove('light-theme', 'dark-theme');
             document.body.classList.add(`${selectedTheme}-theme`);
             localStorage.setItem('theme', selectedTheme);
+        });
+
+        document.getElementById('display-select').addEventListener('change', (e) => {
+            const selectedDisplayMode = e.target.value;
+            localStorage.setItem('displayMode', selectedDisplayMode);
         });
     </script>
 </body>
