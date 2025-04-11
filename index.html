@@ -21,6 +21,32 @@
         <section class="overview">
             <h2>Overview</h2>
             <p>Welcome to your Personal Manager dashboard. Here you can view key metrics, manage tasks, and customize your experience.</p>
+            <div class="todo-section">
+                <h3>To do</h3>
+                <hr class="section-divider">
+                <div class="task">
+                    <p><strong>Task:</strong> Your tasks for today.</p>
+                    <p>No tasks added.</p>
+                </div>
+                <hr class="section-divider">
+                <div class="calendar-day-week">
+                    <p><strong>Calendar:</strong> Your schedule for today and this week.</p>
+                    <p>No schedule added.</p>
+                </div>
+            </div>
+            <div class="info-section">
+                <h3>Info</h3>
+                <hr class="section-divider">
+                <div class="banking-info">
+                    <p><strong>Banking info:</strong> Your recent transactions and balance.</p>
+                    <p>No banking info added.</p>
+                </div>
+                <hr class="section-divider">
+                <div class="calendar-month-year">
+                    <p><strong>Calendar:</strong> Your monthly and yearly events.</p>
+                    <p>No events added.</p>
+                </div>
+            </div>
         </section>
     </main>
     <div class="spacer"></div>
@@ -47,6 +73,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.body.classList.add(`${savedTheme}-theme`);
+            const savedDisplayMode = localStorage.getItem('displayMode') || 'separated';
+            document.querySelector('.overview').classList.add(`display-${savedDisplayMode}`);
         });
     </script>
 </body>
